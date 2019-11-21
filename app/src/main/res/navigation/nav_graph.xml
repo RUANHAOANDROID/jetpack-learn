@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_itemFragment">
+    <!--startDestination 设置首个启动的Fragment-->
+    <action
+        android:id="@+id/action_global_mainFragment"
+        app:destination="@id/nav_itemFragment" />
+    <fragment
+        android:id="@+id/ViewModuleFragment"
+        android:name="com.example.jetpack.viewmodule.ViewModuleFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/view_module_fragment" />
+    <fragment
+        android:id="@+id/nav_itemFragment"
+        android:name="com.example.jetpack.SamplesListFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_item_list" >
+        <action
+            android:id="@+id/action_nav_itemFragment_to_ViewModuleFragment"
+            app:destination="@id/ViewModuleFragment"
+            app:enterAnim="@anim/nav_default_exit_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_nav_itemFragment_to_dataBindingFragment"
+            app:destination="@id/dataBindingFragment" />
+        <action
+            android:id="@+id/action_nav_itemFragment_to_safeArgsFragment"
+            app:destination="@id/safeArgsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataBindingFragment"
+        android:name="com.example.jetpack.databinding.DataBindingFragment"
+        android:label="fragment_view_binding"
+        tools:layout="@layout/fragment_view_binding">
+        <argument
+            android:name="key"
+            app:argType="string"></argument>
+    </fragment>
+    <fragment
+        android:id="@+id/safeArgsFragment"
+        android:name="com.example.jetpack.navigation.SafeArgsFragment"
+        android:label="fragment_safe_args"
+        tools:layout="@layout/fragment_safe_args">
+        <argument
+            android:name="arg_name"
+            app:argType="string"></argument>
+        <argument
+            android:name="arg_age"
+            app:argType="integer"></argument>
+        <argument
+            android:name="user"
+            app:argType="com.example.jetpack.navigation.User"></argument>
+    </fragment>
+    <fragment
+        android:id="@+id/deepLinkFragment"
+        android:name="com.example.jetpack.navigation.DeepLinkFragment"
+        android:label="fragment_deep_link"
+        tools:layout="@layout/fragment_deep_link">
+        <deepLink
+            android:id="@+id/deepLink_JianShu"
+            app:uri="https://www.jianshu.com/{sign_in}"
+            android:autoVerify="true"/>
+    </fragment>
+</navigation>
