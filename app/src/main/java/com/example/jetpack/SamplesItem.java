@@ -26,7 +26,7 @@ public class SamplesItem {
 
     static {
         addItem(new DummyItem(1, "DataBingding", "DataBingding学习"));
-        addItem(new DummyItem(2, "ViewModule", "ViewModule"));
+        addItem(new DummyItem(2, "ViewModule+LiveDate基本（模拟异步）", "ViewModule"));
         addItem(new DummyItem(3, "navigation safe args (安全传值)", "navigation safe args"));
         addItem(new DummyItem(4, "navigation 深层链接(待在Notification 实现)", "navigation"));
         addItem(new DummyItem(5, "Lifecycle Location", "ViewModule学习"));
