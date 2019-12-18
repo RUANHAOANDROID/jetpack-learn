@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.example.myapplication"
+        applicationId "com.example.jetack"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -20,6 +20,10 @@ android {
     }
     dataBinding {
         enabled = true
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
     }
 }
 
@@ -38,5 +42,6 @@ dependencies {
     // Java language implementation
     implementation "androidx.navigation:navigation-fragment:$rootProject.nav_version"
     implementation "androidx.navigation:navigation-ui:$rootProject.nav_version"
-
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+    implementation rootProject.ext.rxJava
 }

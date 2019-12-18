@@ -19,6 +19,7 @@ import com.example.jetpack.navigation.DeepLinkFragment;
 import com.example.jetpack.navigation.SafeArgsFragment;
 import com.example.jetpack.navigation.SafeArgsFragmentArgs;
 import com.example.jetpack.navigation.User;
+import com.example.jetpack.utlis.Logger;
 
 /**
  * 主页面
@@ -26,13 +27,13 @@ import com.example.jetpack.navigation.User;
 public class MainNavigationActivity extends AppCompatActivity implements SamplesListFragment.OnListFragmentInteractionListener {
     private String TAG = "MainNavigationActivity";
     private NavHostFragment navHostFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
          navHostFragment = (NavHostFragment) getSupportFragmentManager()
                  .findFragmentById(R.id.nav_host_fragment);
-
 //        if (savedInstanceState == null) {
 //            getSupportFragmentManager().beginTransaction()
 //                    .replace(R.id.container, SamplesListFragment.newInstance(1))
@@ -70,6 +71,8 @@ public class MainNavigationActivity extends AppCompatActivity implements Samples
                 Toast.makeText(this, "Notification中实现PendingIntent 跳转深层链接、待实现", Toast.LENGTH_SHORT).show();
                 break;
             case 5:
+                Navigation.findNavController(view).navigate(R.id.locationFragment);
+                break;
 
 
         }
