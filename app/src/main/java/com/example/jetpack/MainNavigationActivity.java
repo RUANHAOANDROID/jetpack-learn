@@ -73,7 +73,9 @@ public class MainNavigationActivity extends AppCompatActivity implements Samples
             case 5:
                 Navigation.findNavController(view).navigate(R.id.locationFragment);
                 break;
-
+            case 6:
+                getNavigate().navigate(R.id.worksFragment);
+                break;
 
         }
     }

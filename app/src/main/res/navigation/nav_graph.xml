@@ -74,4 +74,9 @@
         android:name="com.example.jetpack.lifecycles.LocationFragment"
         android:label="fragment_location"
         tools:layout="@layout/fragment_location" />
+    <fragment
+        android:id="@+id/worksFragment"
+        android:name="com.example.jetpack.workmanager.WorksFragment"
+        android:label="fragment_item_list2"
+        tools:layout="@layout/fragment_item_list2" />
 </navigation>
