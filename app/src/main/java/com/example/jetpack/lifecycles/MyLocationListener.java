@@ -53,7 +53,7 @@ public class MyLocationListener implements LifecycleObserver {
         enabled = true;
         if (lifecycle.getCurrentState().isAtLeast(STARTED)) {
             // connect if not connected
-
+            gpsStart("GPS", 5, 50, callback);
         }
     }
 
